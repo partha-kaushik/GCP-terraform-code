@@ -1,5 +1,5 @@
 #!/bin/bash
-
+## *** see comments after the code for the problem that is being solved *** ##
 # full path to directory that contains the files to be processed
 dirName="${1}"
 
@@ -36,3 +36,63 @@ do
 			    echo "*******    Files Moved Count    *******"
 			    echo "*******      ${fileCount}       *******"
 			    echo "***************************************"
+## ************************************************************************************ ##
+# The Situation
+# There are 2 million files in one directory. The files are of different types,
+# which are reflected by the file names. The file naming convention is:
+# AAxyz.ddmmyyFSRV.Z01, where:
+# ● AA - file type code
+# ● xyz - arbitrary 3-digit code
+# ● ddmmyy - date
+# ● FSRV.Z01 - constant string
+# Sample file names in the directory:
+# FS123.010218FSRV.Z01
+# FS123.010318FSRV.Z01
+# FS123.010418FSRV.Z01
+# FS456.010218FSRV.Z01
+# FS456.010318FSRV.Z01
+# FS456.010418FSRV.Z01
+# TS123.010218FSRV.Z01
+# TS123.010318FSRV.Z01
+# TS123.010418FSRV.Z01
+# TS456.010218FSRV.Z01
+# TS456.010318FSRV.Z01
+# TS456.010418FSRV.Z01
+# RS123.010218FSRV.Z01
+# RS123.010318FSRV.Z01
+# RS123.010418FSRV.Z01
+# RS456.010218FSRV.Z01
+# RS456.010318FSRV.Z01
+# RS456.010418FSRV.Z01
+# The Task
+# Create a script in the scripting language of your choice which will perform
+# the following tasks:
+# 1. Create a target directory structure based on the dates included in the
+# files:
+# a. YY (first year)
+# i. MM (first month)
+# 1. DD
+# a. FS (file code)
+# b. TS (file code)
+# c. etc.
+# 2. DD (next month)
+# a. FS (file code)
+# b. TS (file code)
+# c. etc.
+# b. YY (next year)
+# i. MM (first month)
+# 1. DD
+# a. FS (file code)
+# b. TS (file code)
+# c. etc.
+# 2. DD (next month)
+# a. FS (file code)
+# b. TS (file code)
+# c. Etc.
+# 2. Copy the files from the source directory to the target directories that
+# were created at step 1
+# 3. Remove the files from the target directory
+# 4. Bonus: Implement a solution to record and verify that all files from the
+# source directory were moved to the target directories and no file was
+# lost.
+# 
