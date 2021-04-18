@@ -1,5 +1,7 @@
 #!/bin/bash
+
 ## *** see comments after the code for the problem that is being solved *** ##
+
 # full path to directory that contains the files to be processed
 dirName="${1}"
 
